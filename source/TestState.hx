@@ -6,11 +6,13 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
+import Entity;
+import components.TestComponent;
 
 /**
- * A FlxState which can be used for the actual gameplay.
+ * A FlxState which can be used for the game's menu.
  */
-class PlayState extends FlxState
+class TestState extends FlxState
 {
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -18,6 +20,12 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		super.create();
+
+		var testentity:Entity = new Entity();
+		trace(Type.getClass(testentity));
+
+		testentity.addComponent(new TestComponent());
+		trace(testentity.getComponent("TestComponent").getTestData());
 	}
 	
 	/**
