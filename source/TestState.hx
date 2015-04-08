@@ -26,6 +26,11 @@ class TestState extends FlxState
 
 		testentity.addComponent(new TestComponent());
 		trace(testentity.getComponent("TestComponent").getTestData());
+
+		testentity.printListOfComponentsForDebug();
+		testentity.getComponent("TestComponent").remove();
+		trace("DONE remove.");
+		testentity.printListOfComponentsForDebug();
 	}
 	
 	/**

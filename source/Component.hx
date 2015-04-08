@@ -37,6 +37,24 @@ class Component
 	}
 
 	/**
+	 * Removes the component from the list of it's base entity
+	 */
+	public function remove()
+	{
+		_baseEntity.removeComponent(this);
+	}
+
+	/**
+	 * Gets a component from the base entity.
+	 *
+	 * @returns The specific component.
+	 */
+	public function getComponent(componentName:String):Dynamic
+	{
+		return _baseEntity.getComponent(componentName);
+	}
+
+	/**
 	 * The update routine.
 	 */
 	public function update():Void

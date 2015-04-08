@@ -94,4 +94,22 @@ class Entity
 	{
 		return _components.filter(function(c) { return c.getComponentName() == componentName; }).first();
 	}
+
+	/**
+	 * Traces every component in the list. For debug purposes only.
+	 */
+	public function printListOfComponentsForDebug():Void
+	{
+		if(_components.length > 0)
+		{
+			for(component in _components)
+			{
+				trace("List: " + component.getComponentName());
+			}
+		}
+		else
+		{
+			trace("No components");
+		}
+	}
 }
